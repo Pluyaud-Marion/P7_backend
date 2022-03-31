@@ -27,7 +27,7 @@ exports.createPost = (req, res) => {
 						UserId: userIdToken,
 						content: postObject.content,
 						attachment: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`
-						//attachment: `${req.protocol}://${req.get("groupomania-pluyaud.netlify.app")}/images/${req.file.filename}`
+
 					})
 						//contient le post créé -> affiche le message de réussite + l'auteur du post
 						.then(() => res.status(201).json({
@@ -41,7 +41,7 @@ exports.createPost = (req, res) => {
 					model.Post.create({
 						UserId: userIdToken,
 						attachment: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`
-						//attachment: `${req.protocol}://${req.get("groupomania-pluyaud.netlify.app")}/images/${req.file.filename}`
+
 					})
 						.then(() => res.status(201).json({
 							authorPost,
